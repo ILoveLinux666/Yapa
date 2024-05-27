@@ -9,3 +9,15 @@ services:
       - ./node:/usr/src/app
     environment:
       - NODE_ENV=production
+  db:
+    image: postgres:latest
+    restart: always
+    #dockerfile: ./d/pg.dockerfile
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/usr/src/app
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: safepassword
+      POSTGRES_DB: YAPA

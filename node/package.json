@@ -14,6 +14,7 @@
     "@types/express": "latest",
     "@types/node": "latest",
     "pg": "latest",
+    "@types/pg": "latest",
     "typescript": "latest"
   },
   "dependencies": {
