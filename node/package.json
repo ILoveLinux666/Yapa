@@ -1,0 +1,23 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "latest",
+    "@types/node": "latest",
+    "pg": "latest",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "express": "latest",
+    "pg": "latest"
+  }
+}

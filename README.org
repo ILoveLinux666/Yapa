@@ -1,1 +1,49 @@
 * YAPA (Yet Another Progress App)
+
+** Description
+Task: Simple Task management app (just backend, no frontend)
+
+1. Application Setup
+Create a Node.js application using TypeScript (you can but don't have to use Express)
+Define RESTful endpoints to create, read, update, and delete (CRUD) tasks.
+Use environment variables for configuration settings like database credentials.
+
+2. Database Integration:
+Set up a PostgreSQL database
+Design a simple schema for the tasks for example: id (auto-incremented primary key), title (text), description (text), and status (text).
+
+3. Docker Configuration
+Write a Dockerfile for the Node.js application.
+Create a docker-compose.yml file that defines two services:
+The Node.js application.
+The PostgreSQL database, initialized with the required schema.
+
+4. GitHub Actions Pipeline:
+Set up a GitHub repository for the project.
+Configure a GitHub Actions workflow that performs the following steps:
+Lints the code using ESLint.
+Builds the Docker images.
+
+5. Documentation
+Include a README.md with instructions on how to build, run, and use the API.
+
+Deliverables
+A GitHub repository containing:
+Node.js code with the defined RESTful API.
+Dockerfile and docker-compose.yml for running the application with PostgreSQL.
+GitHub Actions CI/CD configuration.
+Any tests and linting configurations. (bonus points for tests :) )
+README and other documentation as specified.
+
+Evaluation Criteria
+Functionality: The application must meet all the functional requirements.
+Code Quality: Code should be clean, well-organized, and properly commented.
+Docker Usage: Proper use of Dockerfile and docker-compose configurations.
+DevOps Integration: Effective use of GitHub Actions for continuous integration and deployment processes.
+Documentation: Clear and helpful documentation, including how to run the application and details on API endpoints.
+
+Security ;)
+
+Take your time and make it the best possible :)
+
+** Things
