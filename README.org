@@ -46,4 +46,8 @@ Security ;)
 
 Take your time and make it the best possible :)
 
-** Things
+** TESTING
+
+#+begin_src bash
+curl -X POST http://127.0.0.1:3000/task_create -H "Content-Type: application/json" -d '{"header": "Example Name", "content": "Example Description", "state": "TODO"}'
+#+end_src
