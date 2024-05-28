@@ -11,11 +11,15 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/express": "latest",
-    "@types/node": "latest",
-    "pg": "latest",
-    "@types/pg": "latest",
-    "typescript": "latest"
+      "@eslint/js": "latest",
+      "@types/express": "latest",
+      "@types/node": "latest",
+      "@types/pg": "latest",
+      "eslint": "latest",
+      "globals": "latest",
+      "pg": "latest",
+      "typescript": "latest",
+      "typescript-eslint" : "latest" 
   },
   "dependencies": {
     "express": "latest",

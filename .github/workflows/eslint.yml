@@ -1,0 +1,15 @@
+name: Eslint
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: |
+        cd node
+        npm install
+    - name: Run ESLint
+      run: |
+        cd node
+        npx eslint

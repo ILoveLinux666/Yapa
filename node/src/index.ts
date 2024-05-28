@@ -78,7 +78,7 @@ app.post('/task_update/:id', async (req: Request, res: Response) => {
         } else {
             const { header, content, state } = req.body;
             const payload = await client.query('UPDATE task SET header = $1, content = $2, state = $3 WHERE id = $4', [header, content, state, id]);
-            res.status(200).send('Task updated');
+            res.status(200).json(payload.rows[0]);
         }
     } catch (error) {
         console.log(error);

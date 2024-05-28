@@ -46,7 +46,15 @@ Security ;)
 Take your time and make it the best possible :)
 ** USAGE
 1. Clone the git repo
-2. Set your preferred credentials in the .env file
+2. Create and set your preferred credentials in the .env file
+   An example file could look like this
+   #+BEGIN_SRC bash
+     DB_USER=admin
+     DB_PASS=safepassword
+     DB_HOST=postgres
+     DB_PORT=5432
+     DB_NAME=YAPA
+   #+END_SRC
 3. Run docker-compose build
 4. Run docker-compose up
    
