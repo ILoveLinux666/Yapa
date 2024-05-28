@@ -1,9 +1,8 @@
+// Imports and stuff
 import express, { Request, Response } from 'express';
 import { Pool } from 'pg';
-
 const app = express();
 const PORT = process.env.PORT || 3000;
-
 app.use(express.json());
 
 // Database connection

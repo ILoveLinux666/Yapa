@@ -44,7 +44,9 @@ Documentation: Clear and helpful documentation, including how to run the applica
 Security ;)
 
 Take your time and make it the best possible :)
+
 ** USAGE
+*** Installation
 1. Clone the git repo
 2. Create and set your preferred credentials in the .env file
    An example file could look like this
@@ -56,10 +58,38 @@ Take your time and make it the best possible :)
      DB_NAME=YAPA
    #+END_SRC
 3. Run docker-compose build
-4. Run docker-compose up
-   
-** TESTING
 
+  
+This should be all that is necessary for the application to be fully functional.
+
+Example setup would look like this:
+   #+BEGIN_SRC bash
+     git clone https://github.com/LinuxLover666/Yapa.git
+     cd Yapa
+     # create .env file
+     docker-compose build
+   #+END_SRC
+*** Running
+The app can be run by executing docker-compose up in the project root directory.
+
+*** API
+The api has 5 endpoints
+- /tasks
+  Returns all tasks
+- /task/ID
+  Returns a specific task based on ID
+- /task_update/ID
+  Updates a task based on ID
+- /task_create
+  Creates a task
+- /task_delete/ID
+  Deletes a task based on ID
+
+/tasks and /task_update expects three fields
+  - header
+  - content
+  - state
+    
 #+begin_src bash
   # Returns all tasks
   curl http://127.0.0.1:3000/tasks
