@@ -3,31 +3,30 @@
 ** Description
 Task: Simple Task management app (just backend, no frontend)
 
-1. Application Setup
+*** Application Setup
 Create a Node.js application using TypeScript (you can but don't have to use Express)
 Define RESTful endpoints to create, read, update, and delete (CRUD) tasks.
 Use environment variables for configuration settings like database credentials.
 
-2. Database Integration:
+*** Database Integration:
 Set up a PostgreSQL database
 Design a simple schema for the tasks for example: id (auto-incremented primary key), title (text), description (text), and status (text).
 
-3. Docker Configuration
+*** Docker Configuration
 Write a Dockerfile for the Node.js application.
 Create a docker-compose.yml file that defines two services:
 The Node.js application.
 The PostgreSQL database, initialized with the required schema.
 
-4. GitHub Actions Pipeline:
+*** GitHub Actions Pipeline:
 Set up a GitHub repository for the project.
 Configure a GitHub Actions workflow that performs the following steps:
 Lints the code using ESLint.
 Builds the Docker images.
-
-5. Documentation
+*** Documentation
 Include a README.md with instructions on how to build, run, and use the API.
 
-Deliverables
+*** Deliverables
 A GitHub repository containing:
 Node.js code with the defined RESTful API.
 Dockerfile and docker-compose.yml for running the application with PostgreSQL.
@@ -35,7 +34,7 @@ GitHub Actions CI/CD configuration.
 Any tests and linting configurations. (bonus points for tests :) )
 README and other documentation as specified.
 
-Evaluation Criteria
+*** Evaluation Criteria
 Functionality: The application must meet all the functional requirements.
 Code Quality: Code should be clean, well-organized, and properly commented.
 Docker Usage: Proper use of Dockerfile and docker-compose configurations.
@@ -49,12 +48,14 @@ Take your time and make it the best possible :)
 ** TESTING
 
 #+begin_src bash
-# Returns all tasks
-curl http://127.0.0.1/tasks
-# Returns a task with the given id
-curl http://127.0.0.1/task/PUT_ID_HERE
-# Updates a task in a db
-curl -X POST http://127.0.0.1:3000/task_update/PUT_ID_HERE -H "Content-Type: application/json" -d '{"header": "Example Name", "content": "Example Description", "state": "TODO"}'
-# Creates a task in a db
-curl -X POST http://127.0.0.1:3000/task_create -H "Content-Type: application/json" -d '{"header": "Example Name", "content": "Example Description", "state": "TODO"}'
+  # Returns all tasks
+  curl http://127.0.0.1:3000/tasks
+  # Returns a task with the given id
+  curl http://127.0.0.1:3000/task/PUT_ID_HERE
+  # Updates a task
+  curl -X POST http://127.0.0.1:3000/task_update/PUT_ID_HERE -H "Content-Type: application/json" -d '{"header": "Example Name", "content": "Example Description", "state": "TODO"}'
+  # Creates a task
+  curl -X POST http://127.0.0.1:3000/task_create -H "Content-Type: application/json" -d '{"header": "Example Name", "content": "Example Description", "state": "TODO"}'
+  # Delete a task
+  curl -X DELETE http://127.0.0.1:3000/task_delete/PUT_ID_HERE
 #+end_src
