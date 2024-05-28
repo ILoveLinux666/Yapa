@@ -7,8 +7,8 @@ services:
       - "3000:3000"
     volumes:
       - ./node:/usr/src/app
-    environment:
-      - NODE_ENV=production
+    env_file:
+      - .env
   db:
     image: postgres:latest
     restart: always
@@ -19,7 +19,7 @@ services:
       - ./db:/usr/src/app
       - ./db/todo.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: safepassword
-      POSTGRES_DB: YAPA
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
 

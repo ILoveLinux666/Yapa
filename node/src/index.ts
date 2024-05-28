@@ -8,11 +8,11 @@ app.use(express.json());
 
 // Database connection
 const pool = new Pool({
-    user: 'admin',
-    host: 'postgres',
-    database: 'YAPA',
-    password: 'safepassword',
-    port: 5432,
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASS,
+    port: parseInt(process.env.DB_PORT ?? '5432')
 });
 
 //HELLO PAGE
