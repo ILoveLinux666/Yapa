@@ -64,7 +64,7 @@ This should be all that is necessary for the application to be fully functional.
 
 Example setup would look like this:
    #+BEGIN_SRC bash
-     git clone https://github.com/LinuxLover666/Yapa.git
+     git clone git@github.com:ILoveLinux666/Yapa.git
      cd Yapa
      # create .env file
      docker-compose build
