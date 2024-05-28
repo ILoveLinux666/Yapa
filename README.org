@@ -49,5 +49,12 @@ Take your time and make it the best possible :)
 ** TESTING
 
 #+begin_src bash
+# Returns all tasks
+curl http://127.0.0.1/tasks
+# Returns a task with the given id
+curl http://127.0.0.1/task/PUT_ID_HERE
+# Updates a task in a db
+curl -X POST http://127.0.0.1:3000/task_update/PUT_ID_HERE -H "Content-Type: application/json" -d '{"header": "Example Name", "content": "Example Description", "state": "TODO"}'
+# Creates a task in a db
 curl -X POST http://127.0.0.1:3000/task_create -H "Content-Type: application/json" -d '{"header": "Example Name", "content": "Example Description", "state": "TODO"}'
 #+end_src

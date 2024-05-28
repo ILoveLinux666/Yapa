@@ -25,7 +25,7 @@ app.get('/tasks', async (req: Request, res: Response) => {
 	const client = await pool.connect();
 	const result = await client.query('SELECT * FROM task');
 	if (result.rows.length === 0) {
-	    res.status(400).send('No tasks found');
+	    res.status(204).send('No tasks found');
 	} else {
 	    res.status(200).json(result.rows);
 	}
@@ -63,6 +63,25 @@ app.post('/task_create', async (req: Request, res: Response) => {
             console.log(error);
             res.status(500).send('Error 500');
         }
+    }
+});
+
+//UPDATE TASK DETAILS
+app.post('/task_update/:id', async (req: Request, res: Response) => {
+    try {
+	const id = parseInt(req.params.id, 10);
+    const client = await pool.connect();
+    const result = await client.query('SELECT * FROM task WHERE id = $1', [id]);
+    if (result.rows.length === 0) {
+	res.status(204).send('No task with this id');
+    } else {
+	const { header , content , state } = req.body;
+	const payload = await client.query('UPDATE task SET header = $1, content = $2, state = $3 WHERE id = $4', [ header , content , state , id]);
+    res.status(200).send('Task updated');
+    }
+    } catch(error) {
+	console.log(error);
+	res.status(500).send('Error 500');
     }
 });
 //Start the server
